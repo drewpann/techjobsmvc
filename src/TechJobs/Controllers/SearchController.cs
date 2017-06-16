@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using TechJobs.Models;
+using System;
 
 namespace TechJobs.Controllers
 {
@@ -19,6 +20,11 @@ namespace TechJobs.Controllers
         {
             ViewBag.columns = ListController.columnChoices;
             List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
+
+            if (String.IsNullOrEmpty(searchTerm))
+            {
+                return View("Index");
+            }
 
             if (searchType.Equals("all"))
             {

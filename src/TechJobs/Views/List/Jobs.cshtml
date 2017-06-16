@@ -7,7 +7,6 @@
     foreach (Dictionary<string,string> job in ViewBag.jobs)
     {
         <table>
-            <tbody>
             @foreach (KeyValuePair<string,string> entry in job)
         {
                 <tr>
@@ -16,7 +15,6 @@
                 </tr>
                 
         }
-            </tbody>
         </table>
         <p></p>
         <p></p>
